@@ -1,0 +1,141 @@
+﻿@charset "utf-8";
+
+/*所有元素去掉默认的边距，还有边框*/
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+/*去掉ol，ul，li的type样式*/
+ol,
+ul,
+li {
+	list-style-type: none;
+}
+ol,
+ul {
+	padding-left: 0 !important;
+}
+/*img转为块级元素，不转有时候可能有点毛病*/
+
+
+/*a标签默认没有下划线*/
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+/*a:visited,a:active,a:focus{
+	background: none;
+}*/
+/*h标题去掉默认加粗*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	text-transform: none;
+}
+/*为什么选择和创*/
+.why-select {
+	width: 1024px;
+	margin: 50px auto 0 auto;
+	overflow: hidden;
+}
+.why-select>h2 {
+	text-align: center;
+}
+.why-select>a {
+	display: block;
+	margin: 0px auto 60px;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #ccc;
+	font-family: '宋体';
+	font-size: 14px;
+	color: #969595;
+	background: #fff;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+
+.why-select>a:hover {
+	border: 1px solid #ff8000;
+	color: #fff;
+	background-color:#ff8000;
+	text-decoration: none;
+}
+
+.why-select>h2 a {
+	color: #333;
+	text-decoration: none;
+}
+
+.why-select h2 {
+	font-family: "微软雅黑";
+	font-size: 30px;
+	color: #333333;
+}
+
+.why-select-advantage {
+	width: 1024px;
+	overflow: hidden;
+	margin: 40px auto 60px auto;
+}
+
+.wsa-advantage {
+	width: 314px;
+	margin-left: 40px;
+	float: left;
+	overflow: hidden;
+}
+
+.wsa-advantage-1 {
+	margin-left: 0;
+}
+
+.wsa-advantage h2 {
+	font-size: 18px;
+	line-height: 32px;
+	color: #333333;
+	font-family: "微软雅黑";
+	margin-bottom: 15px;
+}
+
+.wsa-advantage h2 span {
+	display: block;
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin-right: 10px;
+	background: url(../images/icon.png);
+}
+
+.wsa-advantage h2 .wsa-advantage-span1 {
+	background-position: -21px -20px;
+}
+
+.wsa-advantage h2 .wsa-advantage-span2 {
+	background-position: -72px -20px;
+}
+
+.wsa-advantage h2 .wsa-advantage-span3 {
+	background-position: -123px -20px;
+}
+
+.wsa-advantage p {
+	font-size: 13px;
+	color: #666666;
+	font-family: "微软雅黑";
+	line-height: 20px;
+	margin-left: 42px;
+}
+

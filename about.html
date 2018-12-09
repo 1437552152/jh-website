@@ -9,11 +9,11 @@
 		<link rel="stylesheet" type="text/css" href="css/new.css" />
 		<link rel="stylesheet" type="text/less" href="less/common.less" />
 		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.4/less.js"></script>
 		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
-		<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
-
+		<!--<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>-->
+		<script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
 	</head>
 
 	<body>
@@ -39,8 +39,14 @@
 							<li>
 								<a href="index.html">首页</a>
 							</li>
-							<li>
-								<a href="country.html">单个国家</a>
+							<li v-for="item in list">
+								<span>{{item.typeid}}</span>
+								<ul>
+									<li v-for="sing in item.countrylist">
+										<a v-bind:href="'country.html?id='+sing.Id">{{sing.country}}留学</a>
+									</li>
+
+								</ul>
 							</li>
 							<li>
 								<a href="goodsCase.html">新闻中心</a>
@@ -52,7 +58,7 @@
 								<a href="questCenter.html">答疑中心</a>
 							</li>
 							<li class="active">
-								<a href="#">公司简介</a>
+								<a href="about.html?id=1">公司简介</a>
 							</li>
 							<div class="clearfix"></div>
 						</ul>
@@ -69,30 +75,30 @@
 				<div class="about_com_div">
 					<div class="about_com_list fl">
 						<ul>
-							<a href="" class="a_active">
+							<a href="about.html?id=1" class="a_active">
 								<li>
-									<img src="images/about_com_list_img_1_f.png"> 捷航简介
+									 捷航简介
 								</li>
 							</a>
 
-							<a href="">
+							<a href="about.html?id=2">
 								<li>
-									<span class="about_com_list_span_2"></span> 企业文化
+									企业文化
 								</li>
 							</a>
-							<a href="">
+							<a href="about.html?id=3">
 								<li>
-									<span class="about_com_list_span_3"></span> 企业环境
+								企业环境
 								</li>
 							</a>
-							<a href="">
+							<a href="about.html?id=4">
 								<li>
-									<span class="about_com_list_span_4"></span> 隐私说明
+									隐私说明
 								</li>
 							</a>
-							<a href="">
+							<a href="about.html?id=5">
 								<li>
-									<span class="about_com_list_span_5"></span> 联系我们
+									 联系我们
 								</li>
 							</a>
 
@@ -100,15 +106,16 @@
 					</div>
 					<div class="fr about_com_right">
 						<div class="change_son" style="display: block">
-							<h5>捷航简介</h5>
-							<div>
-								<p>是由德信控股集团旗下凯银投资的合资教育机构，成立于2010年，致力于打造留学一体化解决方案高端机构。德国控股集团是 一家全国百强房产企业，从1993年成立到现在，经过22年的运营，德信控股集团已经发展成为了一家拥有4大子公司，庺上万 人的跨国企业。凯银留学借助德信集团，为学生提供了一系列的留学特色服务。凯银留学是一家专业的出国留学服务机构，提 供美国、加拿大、英国、澳洲、欧亚等全球多国留学咨询、院校及专业选择、奖学金申请、签证办理等多项服务。 是由德信控股集团旗下凯银投资的合资教育机构，成立于2010年，致力于打造留学一体化解决方案高端机构。德国控股集团是 一家全国百强房产企业，从1993年成立到现在，经过22年的运营，德信控股集团已经发展成为了一家拥有4大子公司，庺上万 人的跨国企业。凯银留学借助德信集团，为学生提供了一系列的留学特色服务。凯银留学是一家专业的出国留学服务机构，提 供美国、加拿大、英国、澳洲、欧亚等全球多国留学咨询、院校及专业选择、奖学金申请、签证办理等多项服务。 是由德信控股集团旗下凯银投资的合资教育机构，成立于2010年，致力于打造留学一体化解决方案高端机构。德国控股集团是 一家全国百强房产企业，从1993年成立到现在，经过22年的运营，德信控股集团已经发展成为了一家拥有4大子公司，庺上万 人的跨国企业。凯银留学借助德信集团，为学生提供了一系列的留学特色服务。凯银留学是一家专业的出国留学服务机构，提 供美国、加拿大、英国、澳洲、欧亚等全球多国留学咨询、院校及专业选择、奖学金申请、签证办理等多项服务。 是由德信控股集团旗下凯银投资的合资教育机构，成立于2010年，致力于打造留学一体化解决方案高端机构。德国控股集团是 一家全国百强房产企业，从1993年成立到现在，经过22年的运营，德信控股集团已经发展成为了一家拥有4大子公司，庺上万 人的跨国企业。凯银留学借助德信集团，为学生提供了一系列的留学特色服务。凯银留学是一家专业的出国留学服务机构，提 供美国、加拿大、英国、澳洲、欧亚等全球多国留学咨询、院校及专业选择、奖学金申请、签证办理等多项服务。
-								</p>
+							<h5>{{title}}</h5>							
+							<div v-for="item in jianjie"  style="margin-top: 30px;">
+							 <p v-html="item.content"></p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+						
+<iframe frameborder="0" scrolling="no"  src="footer.html" height="516px" width="100%"  style="min-width:1200px;"></iframe>	
 		</div>
 		<script src="config.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
@@ -117,21 +124,70 @@
 					el: '#app',
 					data: {
 						list: null,
+						jianjie:null,
+						type:1,
+						title:""
 					},
 					methods: {
-
 						getData: function(url, params) {
-							//发送get请求
-							this.$http.get(url, params).then(function(res) {
+							axios({
+								method: 'get',
+								url: url,
+								data: params
+							}).then((res) => {
+								res.data.data.forEach(function(item, index) {
+									if(item.typeid == 'zo') {
+										item.typeid = "中欧"
+									} else if(item.typeid == 'do') {
+										item.typeid = "东欧"
+									} else if(item.typeid == 'xo') {
+										item.typeid = "西欧"
+									} else if(item.typeid == 'bo') {
+										item.typeid = "北欧"
+									} else if(item.typeid == 'no') {
+										item.typeid = "南欧"
+									} else if(item.typeid == 'dny') {
+										item.typeid = "东南亚"
+									}
 
-							}, function() {
-								console.log('请求失败');
-							});
+								})
+								this.list = res.data.data;
+							})
 						},
+						  //   接收参数
+					   getParamString:function(name)
+						{
+						     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+						     var r = window.location.search.substr(1).match(reg);
+						     if(r!=null)return  unescape(r[2]); return null;
+						},
+						getjianjie: function(url) {
+							axios({
+								method:'post',
+								url: url,
+								params:{type:this.type} 
+							}).then((res) => {
+							this.jianjie =res.data.data
+							})
+						}
 					},
 					created() {
-						//得到导航
-						this.getData(websiteURL + "/companyprofile", {type:1})
+						this.type=this.getParamString("id");
+						if(this.type==1){
+							this.title="捷航简介"
+						}else if(this.type==2){
+							this.title="企业文化"
+						}else if(this.type==3){
+							this.title="企业环境"
+						}else if(this.type==4){
+							this.title="隐私说明"
+						}else if(this.type==5){
+							this.title="联系我们"
+						}
+						$(".about_com_list ul a").eq(this.type-1).siblings().removeClass("a_active");
+						$(".about_com_list ul a").eq(this.type-1).addClass("a_active");																		
+						this.getData("/getcountry", {})												
+						this.getjianjie("/companyprofile")
 					}
 				})
 

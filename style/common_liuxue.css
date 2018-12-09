@@ -645,12 +645,15 @@ body {
 	margin-right: 0
 }
 .m-lxlc .lxlc-box-08 em {
-	background-position: -350px -229px
+	background-position: -350px -229px;
+	color: #fff
 }
 .m-lxlc .lxlc-box:hover {
-	background: #ffe314;
-	border-color: #ffe314
+	background: #595feb;
+	color: #fff
 }
+.m-lxlc .lxlc-box:hover  p{color: #fff}
+
 .m-lxlc .lxlc-box-01:hover em {
 	background-position: 0 -272px
 }

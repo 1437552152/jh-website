@@ -13,7 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="style/common_liuxue.css" />
 		<link rel="stylesheet" type="text/css" href="style/reset.css" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="http://www.kepuah.org/script/jquery-1.8.3.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/less" href="less/plan.less" />
 		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
@@ -21,7 +21,9 @@
 		<link rel="stylesheet" type="text/less" href="less/common.less" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.4/less.js"></script>
 		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
-		<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+		<!--<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>-->
+	 <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
+	 <script src="script/jquery.hoverdir.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -64,7 +66,7 @@
 								<a href="questCenter.html">答疑中心</a>
 							</li>
 							<li>
-								<a href="#">公司简介</a>
+								<a href="about.html?id=1">公司简介</a>
 							</li>
 							<div class="clearfix"></div>
 						</ul>
@@ -384,115 +386,112 @@
 			</div>
 			<!-- 语言培训e -->
 			<!-----------表单---------->
+			<!--弹框-->
 			<div id="news-main">
 				<div class="sucpop-common">
 					<table width="100%" height="100%" border="0" cellpadding="0">
-						<tbody>
-							<tr>
-								<td align="left" bgcolor="#db2c3f" style="color:#fff">温馨提示</td>
-							</tr>
-							<tr>
-								<td align="center">
-									<div class="boxDesc"></div>
-								</td>
-							</tr>
-							<tr>
-								<td align="center"><input type="button" value="确定" class="surebtn"></td>
-							</tr>
-						</tbody>
+						<tr>
+							<td align="left" bgcolor="#db2c3f" style="color:#fff">温馨提示</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="boxDesc"></div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center"><input type="button" value="确定" class="surebtn" /></td>
+						</tr>
 					</table>
 				</div>
 
-				<div class="applypopbox-common" style="display: none;"></div>
-				<div class="applypop-common" style="display:none;">
+				<div class="applypopbox-common"></div>
+				<div class="applypop-common">
 					<div class="pop-title">
 						<span>出国留学疑问多？想读名校，不知如何准备？</span>
-						<div class="closebtn"><img src="images/close-icon.png"></div>
+						<div class="closebtn"><img src="images/close-icon.png" /></div>
 					</div>
 					<div class="clear"></div>
 					<form action="#" name="onlineForm1" method="post" style="margin:0px;padding:0px;">
-						<input type="hidden" name="partId-common" id="partId-common" value="web-yuyue-common">
-						<input type="hidden" name="partName-common" id="partName-common" value="专题公用资源入口【集团】-弹框">
+						<input type="hidden" name="partId-common" id="partId-common" value="web-yuyue-common" />
+						<input type="hidden" name="partName-common" id="partName-common" value="专题公用资源入口【集团】-弹框" />
 						<table class="formt" border="0" cellspacing="0" cellpadding="10">
-							<tbody>
-								<tr>
-									<td align="right" width="100">*姓名：</td>
-									<td><input type="text" value="" name="userName" id="userName-common"></td>
-								</tr>
-								<tr>
-									<td align="right">意向国家：</td>
-									<td>
-										<select name="toPlace" id="toPlace-common">
-											<option value="">请选择</option>
-											<option value="美国">美国</option>
-											<option value="英国">英国</option>
-											<option value="加拿大">加拿大</option>
-											<option value="澳大利亚">澳大利亚</option>
-											<option value="新西兰">新西兰</option>
-											<option value="新加坡">新加坡</option>
-											<option value="中国香港">中国香港</option>
-											<option value="日本">日本</option>
-											<option value="韩国">韩国</option>
-											<option value="法国">法国</option>
-											<option value="德国">德国</option>
-											<option value="意大利">意大利</option>
-											<option value="荷兰">荷兰</option>
-											<option value="爱尔兰">爱尔兰</option>
-											<option value="其他">其他</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td align="right">*电话：</td>
-									<td><input type="text" value="" name="usertel" id="usertel-common"></td>
-								</tr>
-								<tr>
-									<td align="right">所在城市：</td>
-									<td>
-										<select name="fromCity" id="fromCity-common">
-											<option value="">请选择</option>
-											<option value="北京">北京</option>
-											<option value="上海">上海</option>
-											<option value="杭州">杭州</option>
-											<option value="苏州">苏州</option>
-											<option value="长沙">长沙</option>
-											<option value="深圳">深圳</option>
-											<option value="郑州">郑州</option>
-											<option value="宁波">宁波</option>
-											<option value="西安">西安</option>
-											<option value="厦门">厦门</option>
-											<option value="济南">济南</option>
-											<option value="武汉">武汉</option>
-											<option value="福州">福州</option>
-											<option value="南昌">南昌</option>
-											<option value="太原">太原</option>
-											<option value="温州">温州</option>
-											<option value="舟山">舟山</option>
-											<option value="天津">天津</option>
-											<option value="南京">南京</option>
-											<option value="重庆">重庆</option>
-											<option value="合肥">合肥</option>
-											<option value="成都">成都</option>
-											<option value="广州">广州</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2" align="right">*是必填项</td>
-								</tr>
-								<tr>
-									<td align="center" colspan="2">
-										<input type="button" value="预约申请" id="subBtnCommon" name="Submit">
-										<a class="olcall" onclick="doyoo.util.openChat('g=10061553'); return false;" target="_blank">在线咨询</a>
-										<div class="clear"></div>
-									</td>
-								</tr>
-							</tbody>
+							<tr>
+								<td align="right" width="100">*姓名：</td>
+								<td><input type="text" value="" name="userName" id="userName-common" /></td>
+							</tr>
+							<tr>
+								<td align="right">意向国家：</td>
+								<td>
+									<select name="toPlace" id="toPlace-common">
+										<option value="">请选择</option>
+										<option value="美国">美国</option>
+										<option value="英国">英国</option>
+										<option value="加拿大">加拿大</option>
+										<option value="澳大利亚">澳大利亚</option>
+										<option value="新西兰">新西兰</option>
+										<option value="新加坡">新加坡</option>
+										<option value="中国香港">中国香港</option>
+										<option value="日本">日本</option>
+										<option value="韩国">韩国</option>
+										<option value="法国">法国</option>
+										<option value="德国">德国</option>
+										<option value="意大利">意大利</option>
+										<option value="荷兰">荷兰</option>
+										<option value="爱尔兰">爱尔兰</option>
+										<option value="其他">其他</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td align="right">*电话：</td>
+								<td><input type="text" value="" name="usertel" id="usertel-common" /></td>
+							</tr>
+							<tr>
+								<td align="right">所在城市：</td>
+								<td>
+									<select name="fromCity" id="fromCity-common">
+										<option value="">请选择</option>
+										<option value="北京">北京</option>
+										<option value="上海">上海</option>
+										<option value="杭州">杭州</option>
+										<option value="苏州">苏州</option>
+										<option value="长沙">长沙</option>
+										<option value="深圳">深圳</option>
+										<option value="郑州">郑州</option>
+										<option value="宁波">宁波</option>
+										<option value="西安">西安</option>
+										<option value="厦门">厦门</option>
+										<option value="济南">济南</option>
+										<option value="武汉">武汉</option>
+										<option value="福州">福州</option>
+										<option value="南昌">南昌</option>
+										<option value="太原">太原</option>
+										<option value="温州">温州</option>
+										<option value="舟山">舟山</option>
+										<option value="天津">天津</option>
+										<option value="南京">南京</option>
+										<option value="重庆">重庆</option>
+										<option value="合肥">合肥</option>
+										<option value="成都">成都</option>
+										<option value="广州">广州</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" align="right">*是必填项</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2">
+									<input type="button" value="预约申请" id="subBtnCommon" name="Submit" />
+									<a class="olcall" onclick="doyoo.util.openChat('g=10061553'); return false;" target="_blank">在线咨询</a>
+									<div class="clear"></div>
+								</td>
+							</tr>
 						</table>
 
 					</form>
 				</div>
-			</div>
+			</div>				
 			<!-----------表单---------->
 			<!-----------名师团队---------->
 			<div class="two_Hch">
@@ -1723,134 +1722,15 @@
 
 					</div>
 				</div>
-			</div>
-			<!--尾部-->
-			<footer>
-				<div class="foot" style="background: url(images/footbg.png);">
-					<div class="w1200">
-						<div class="items">
-							<div class="item">
-								<div class="title">了解更多</div>
-								<ul>
-									<li>
-
-										<a href="#">优秀案例</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">留学规划</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">商务推广</a>
-
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="item">
-								<div class="title">关于捷航</div>
-								<ul>
-									<li>
-
-										<a href="#">公司简介</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">企业文化</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">企业环境</a>
-
-									</li>
-									<li>
-
-										<a href="#">隐私说明</a>
-
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="item">
-								<div class="title">联系我们</div>
-								<ul>
-									<li>
-
-										联系电话：025-00000
-
-									</li>
-
-									<li>
-
-										服务热线：000000
-
-									</li>
-
-									<li>
-
-										邮箱地址：0000000
-
-									</li>
-									<li>
-
-										公司地址：11111
-
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="item">
-								<div class="title">关注我们</div>
-								<ul>
-									<li>
-
-										<img src="images/banner2.jpg" style="width: 100px;height: 100px;">
-
-									</li>
-
-									<li>
-
-										捷航留学官方微信
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<p class="bottom">2018捷航教育*************************************************</p>
-					</div>
-
-				</div>
-
-			</footer>
+			</div>			
+           <iframe frameborder="0" scrolling="no"  src="footer.html" height="516px" width="100%"  style="min-width:1200px;"></iframe>	
 		</div>
-		<script src="script/byc-slider.js"></script>
-		<script type=text/javascript>
-			slider.init();
-		</script>
-		<!--弹出表单-->
-		<script src="js/yuyue.js" type="text/javascript" charset="utf-8"></script>
-		<!--轮播配置-->
-		<script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/scroll.js" type="text/javascript" charset="utf-8"></script>
+		
 
 		<script>
-			$(function() {
-				$(".inHd ul li").hover(function() {
-					let index = $(this).index();
+			$(function() {				
+				$(".inHd li").hover(function() {
+					var index = $(this).index();
 					$(this).addClass("on");
 					$(this).siblings().removeClass("on");
 					$(".inBd .yxk").eq(index).css({
@@ -1872,9 +1752,13 @@
 					},
 					methods: {
 						getData: function(url, params) {
-							//发送get请求
-							this.$http.get(url, params).then(function(res) {
-								res.body.data.forEach(function(item,index){									
+							
+				        	axios({
+							    method: 'get',
+							    url:url,
+							    data: params
+							}).then((res)=>{									
+						     res.data.data.forEach(function(item,index){									
 									if(item.typeid=='zo'){
 										item.typeid="中欧"
 									}else if(item.typeid=='do'){
@@ -1890,19 +1774,129 @@
 									}
 									
 								})
-								this.list = res.body.data;
-								
-							}, function() {
+								this.list = res.data.data;	
+								localStorage.setItem('country', this.list);
+						}, function() {
 								console.log('请求失败');
 							});
 						}
 					},
 					created() {
-						this.getData(websiteURL + "/getcountry", {})
+						this.getData("/getcountry", {})
 					}
-
 				})
 			}
+		</script>
+		<script src="script/byc-slider.js"></script>
+			<script type=text/javascript>
+			slider.init();
+		</script>
+		<!--弹出表单-->
+		<!--轮播配置-->
+		<script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/scroll.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/yuyue.js" type="text/javascript" charset="utf-8"></script>-->
+		<script>
+			function popBtn() {
+				$("#news-main .applypop-common").fadeIn(800);
+				$("#news-main .applypopbox-common").fadeIn(800);
+			}
+			$(function() {
+				$("#news-main .applypopbox-common,.closebtn").click(function() {
+					$("#news-main .applypopbox-common").fadeOut(800);
+					$("#news-main .applypop-common").fadeOut(800);
+				});
+				$("#news-main .surebtn").click(function() {
+					if($("#news-main .boxDesc").html() == '预约成功！稍后会有老师联系您，请保持手机畅通！') {
+						$("#news-main .sucpop-common").fadeOut(800);
+						$("#news-main .applypop-common").fadeOut(800);
+						$("#news-main .applypopbox-common").fadeOut(800);
+					} else {
+						$("#news-main .sucpop-common").fadeOut(800);
+					}
+				});
+				$("#news-main #subBtnCommon").click(function() {
+					var userName = $("#news-main #userName-common").val();
+					var userCity = $("#news-main #fromCity-common").val();
+					var toPlace = $("#news-main #toPlace-common").val();
+					var userTel = $("#news-main #usertel-common").val();
+					if(userName == "" || userName == "请输入您的姓名") {
+						alertBoxCommon("请输入您的姓名", '1000');
+						$("#news-main #userName-common").val("");
+						$("#news-main #userName-common").focus();
+						return false;
+					} else {
+						var reg = /([\u4E00-\u9FA5\uf900-\ufa2d]{2,3})|([a-zA-Z]{3,20})/;
+						if(!userName.match(reg)) {
+							alertBoxCommon("请请核对你的姓名！", '1000');
+							$("#news-main #userName-common").focus();
+							return false;
+						} else if(userName.length >= 5) {
+							alertBoxCommon("请核对你的姓名！", '1000');
+							$("#news-main #userName-common").focus();
+							return false;
+						}
+					}
+					var reg = /^0{0,1}(1)[0-9]{10}$/;
+					if(userTel == "" || userTel == "请输入手机号码") {
+						alertBoxCommon("请输入手机号码", '1000');
+						$("#news-main #userTel").val('');
+						$("#news-main #userTel").focus();
+						return false;
+					} else if(reg.test(userTel) != true) {
+						alertBoxCommon("请核对你的手机号码！", '1000');
+						$("#news-main #userTel").focus();
+						return false;
+					}
+					var szData = {
+						custName: userName,
+						tel: userTel,
+						city: userCity,
+						country: toPlace,
+						oper: "save",
+						partId: $("#partId-common").val(),
+						partName: $("#partName-common").val()
+					};
+					var ajaxUrl = "/php/freeTest.php";
+					$.ajax({
+						type: 'POST',
+						url: ajaxUrl,
+						data: szData,
+						success: function(xml) {
+							var rootNode = $(xml).find("root");
+							var szCode = $(rootNode).find("code").text();
+							if(szCode == '2') {
+								alertBoxCommon("提交失败！", '3000');
+							} else if(szCode == '5') {
+								alertBoxCommon("您已经提交过预约信息。", '3000');
+								cleanForm('#userName-common', '#usertel-common', '#toPlace-common', '#fromCity-common');
+								$("#news-main .surebtn").click(function() {
+									$("#news-main .applypopbox-common").fadeOut(800);
+									$("#news-main .applypop-common").fadeOut(800);
+								})
+							} else {
+								alertBoxCommon("预约成功,感谢你的参与", '3000');
+								cleanForm('#userName-common', '#usertel-common', '#toPlace-common', '#fromCity-common');
+								$("#news-main .surebtn").click(function() {
+									$("#news-main .applypopbox-common").fadeOut(800);
+									$("#news-main .applypop-common").fadeOut(800);
+								})
+							}
+						}
+					})
+				})
+
+				function alertBoxCommon(desc, time) {
+					$("#news-main .boxDesc").html(desc);
+					$("#news-main .sucpop-common").show();
+				}
+
+				function cleanForm() {
+					for(var i = 0; i < arguments.length; i++) {
+						$(arguments[i]).val('');
+					}
+				}
+			})
 		</script>
 	</body>
 

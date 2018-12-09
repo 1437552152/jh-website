@@ -28,7 +28,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.4/less.js"></script>
 		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
-		<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+		<!--<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>-->
+	<!--<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>-->
+	 <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
 	</head>
 
 	<body>
@@ -56,7 +58,7 @@
 							<li v-for="item in list">
 								<span>{{item.typeid}}</span>
 								<ul>
-									<li v-for="sing in item.countrylist"><a       v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a></li>
+									<li v-for="sing in item.countrylist"><a  v-bind:href="'country.html?id='+sing.Id">{{sing.country}}留学</a></li>
 									
 								</ul>
 							</li>
@@ -131,123 +133,12 @@
 				</div>		
 
 			<!--尾部-->
-			<footer>
-				<div class="foot" style="background: url(images/footbg.png);">
-					<div class="w1200">
-						<div class="items">
-							<div class="item">
-								<div class="title">了解更多</div>
-								<ul>
-									<li>
-
-										<a href="#">优秀案例</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">留学规划</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">商务推广</a>
-
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="item">
-								<div class="title">关于捷航</div>
-								<ul>
-									<li>
-
-										<a href="#">公司简介</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">企业文化</a>
-
-									</li>
-
-									<li>
-
-										<a href="#">企业环境</a>
-
-									</li>
-									<li>
-
-										<a href="#">隐私说明</a>
-
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="item">
-								<div class="title">联系我们</div>
-								<ul>
-									<li>
-
-										联系电话：025-00000
-
-									</li>
-
-									<li>
-
-										服务热线：000000
-
-									</li>
-
-									<li>
-
-										邮箱地址：0000000
-
-									</li>
-									<li>
-
-										公司地址：11111
-
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="item">
-								<div class="title">关注我们</div>
-								<ul>
-									<li>
-
-										<img src="images/banner2.jpg" style="width: 100px;height: 100px;">
-
-									</li>
-
-									<li>
-
-										捷航留学官方微信
-									</li>
-
-								</ul>
-
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<p class="bottom">2018捷航教育*************************************************</p>
-					</div>
-
-				</div>
-
-			</footer>
-
+            <iframe frameborder="0" scrolling="no"  src="footer.html" height="516px" width="100%"  style="min-width:1200px;"></iframe>	
 		</div>
 	</body>
 	<script src="config.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			window.onload = function() {
+						window.onload = function() {
 				var vm = new Vue({
 					el: '#app',
 					data: {
@@ -262,20 +153,28 @@
 						}
 					},
 					methods: {
-						submit:function(){							
-							this.$http.post(websiteURL+"/liuyan",this.formInline).then(function(res) {
-								if(res.status=='200'){
-								alert(res.body.msg)		
-								}else{
-								alert(res.body.msg)		
-								}																
-							}, function() {																
-							});														
+						submit:function(){	
+							var that=this;
+							axios({
+								 method:'post',
+							     url:"/liuyan",
+							     params: that.formInline				   
+							}).then((res)=>{								
+								alert(res.data.msg)
+								that.formInline.username="";
+								that.formInline.phone="";
+								that.formInline.content="";									
+//								}
+							})																										
 						},
 						getData: function(url, params) {
-							//发送get请求
-							this.$http.get(url, params).then(function(res) {
-								res.body.data.forEach(function(item,index){									
+							axios({
+							    method: 'get',
+							    url:url,
+							    data: params
+							}).then((res)=>{						
+						     	console.log(res)
+							     	res.data.data.forEach(function(item,index){									
 									if(item.typeid=='zo'){
 										item.typeid="中欧"
 									}else if(item.typeid=='do'){
@@ -291,31 +190,28 @@
 									}
 									
 								})
-								this.list = res.body.data;
-								
-							}, function() {
-								console.log('请求失败');
-							});
+								this.list = res.data.data;
+							})	
 						},
 						
 						getLiuyanList: function(url, params) {
-							//发送get请求
-							this.$http.get(url, params).then(function(res) {
-							   this.liuyanlist=res.body.data
-								
-							}, function() {
-								console.log('请求失败');
-							});
+							axios({
+							    method: 'get',
+							    url:url,
+							    data: params
+							}).then((res)=>{						
+						     	this.liuyanlist=res.data.data
+							})						
 						},
 						
 						
 					},
 					created() {
 						//得到导航
-						this.getData(websiteURL + "/getcountry", {})						
+						this.getData("/getcountry", {})						
 						
 						//得到常见问题的回复
-						this.getLiuyanList(websiteURL + "/liuyan/list", {})		
+						this.getLiuyanList("/liuyan/list", {})		
 						
 						
 					}					
@@ -323,6 +219,4 @@
 				
 			}
 		</script>
-	
-
 </html>

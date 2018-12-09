@@ -34,7 +34,7 @@ dl {
         width: 100%;
         min-width: 1200px;
         .w1200 {
-            color: #0e457e;        
+            color: #0e457e;
             box-sizing: border-box;
             color: @titleColor;
             a {
@@ -147,8 +147,31 @@ dl {
                     text-align: center;
                     height: 60px;
                     line-height: 60px;
+                    font-size: 17px;
+                    position: relative;
+                    &:hover{
+                        ul{
+                             background: #0e457e;
+                             display: block;
+                        }
+                    }
+                    ul {
+                        position: absolute;
+                        z-index: 99999;
+                        left: 0;
+                        right: 0;
+                        width: 100%;
+                        display:none; 
+                        &:hover {
+                            display: block;
+                            z-index: 999999;
+                            li{
+                             
+                            }
+                          
+                        }
+                    }
                     &:hover {
-                        background: url(../images/bavbg.png) center center no-repeat;
                         background-size: cover;
                         height: 60px;
                         line-height: 60px;
@@ -179,7 +202,7 @@ dl {
             img {
                 min-width: 1200px;
                 width: 100%;
-                height: 500px;
+                height: 600px;
             }
         }
         .w1200 {
@@ -188,15 +211,15 @@ dl {
             position: relative;
             //表单提交
             .form {
-               bottom: -152px;
-    z-index: 9999;
-    position: absolute;
-    background-color: #fff;
-    border-radius: 134px;
-    padding: 38px 140px;
-    border: 1px solid #f0f0f0;
-    box-shadow: 0 30px 30px #f0f0f0;
-    padding-bottom: 10px;
+                bottom: -152px;
+                z-index: 9999;
+                position: absolute;
+                background-color: #fff;
+                border-radius: 134px;
+                padding: 38px 140px;
+                border: 1px solid #f0f0f0;
+                box-shadow: 0 30px 30px #f0f0f0;
+                padding-bottom: 10px;
                 .form-group {
                     .ljzx {
                         background-color: @ziColor;
@@ -322,7 +345,7 @@ dl {
             height: 166px;
             width: 100%;
             min-width: 1200px;
-//          margin-top:230px ;
+            //          margin-top:230px ;
             ul {
                 padding-top: 60px;
                 li {

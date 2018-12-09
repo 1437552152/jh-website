@@ -24,6 +24,7 @@
 		<link rel="stylesheet" type="text/less" href="less/common.less" />
 		<link rel="stylesheet" type="text/css" href="css/questCenter.css"/>
 			<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.4/less.js"></script>
 		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
@@ -52,17 +53,24 @@
 							<li>
 								<a href="#">首页</a>
 							</li>
+							<li v-for="item in list">
+								<span>{{item.typeid}}</span>
+								<ul>
+									<li v-for="sing in item.countrylist"><a       v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a></li>
+									
+								</ul>
+							</li>
 							<li>
 								<a href="goodsCase.html">新闻中心</a>
 							</li>
 							<li>
 								<a href="plan.html">留学服务</a>
 							</li>
-                            <li class="active">
-								<a href="#">答疑中心</a>
+							<li  class="active">
+								<a href="questCenter.html">答疑中心</a>
 							</li>
 							<li>
-								<a href="#">公司简介</a>
+								<a href="about.html">公司简介</a>
 							</li>
 							<div class="clearfix"></div>
 						</ul>
@@ -97,84 +105,27 @@
 					<div class="per_two fl">
 						<h6>常见问题</h6>
 						<div class="ser">
-							<div class="ser_list">
+							<div class="ser_list" v-for="item in liuyanlist">
 								<div class="question"><span>问</span>
-									<p>为什么要为孩子专门定制一款净化器？</p>
+									<p>{{item.content}}</p>
 								</div>
 								<div class="answer">
 									<span class="fl">答</span>
-									<p class="fl">孩子鼻腔短、鼻毛少，呼吸系统脆弱，需要更加洁净的空气保护。而市面上大多净化器，无法做到同时有效去除PM2.5和甲醛，甚至会产生二次污染。</p>
+									<p class="fl">{{item.article}}</p>
 									<div class="clearfix"></div>
 								</div>
-								<p class="time_question">提问日期：2018-11-11</p>
-							</div>
-							<div class="ser_list">
-								<div class="question"><span>问</span>
-									<p>为什么要为孩子专门定制一款净化器？</p>
-								</div>
-								<div class="answer">
-									<span class="fl">答</span>
-									<p class="fl">孩子鼻腔短、鼻毛少，呼吸系统脆弱，需要更加洁净的空气保护。而市面上大多净化器，无法做到同时有效去除PM2.5和甲醛，甚至会产生二次污染。</p>
-									<div class="clearfix"></div>
-								</div>
-								<p class="time_question">提问日期：2018-11-11</p>
-							</div>
-							<div class="ser_list">
-								<div class="question"><span>问</span>
-									<p>为什么要为孩子专门定制一款净化器？</p>
-								</div>
-								<div class="answer">
-									<span class="fl">答</span>
-									<p class="fl">孩子鼻腔短、鼻毛少，呼吸系统脆弱，需要更加洁净的空气保护。而市面上大多净化器，无法做到同时有效去除PM2.5和甲醛，甚至会产生二次污染。</p>
-									<div class="clearfix"></div>
-								</div>
-								<p class="time_question">提问日期：2018-11-11</p>
-							</div>
-							<div class="ser_list">
-								<div class="question"><span>问</span>
-									<p>为什么要为孩子专门定制一款净化器？</p>
-								</div>
-								<div class="answer">
-									<span class="fl">答</span>
-									<p class="fl">孩子鼻腔短、鼻毛少，呼吸系统脆弱，需要更加洁净的空气保护。而市面上大多净化器，无法做到同时有效去除PM2.5和甲醛，甚至会产生二次污染。</p>
-									<div class="clearfix"></div>
-								</div>
-								<p class="time_question">提问日期：2018-11-11</p>
-							</div>
-							<div class="ser_list">
-								<div class="question"><span>问</span>
-									<p>为什么要为孩子专门定制一款净化器？</p>
-								</div>
-								<div class="answer">
-									<span class="fl">答</span>
-									<p class="fl">孩子鼻腔短、鼻毛少，呼吸系统脆弱，需要更加洁净的空气保护。而市面上大多净化器，无法做到同时有效去除PM2.5和甲醛，甚至会产生二次污染。</p>
-									<div class="clearfix"></div>
-								</div>
-								<p class="time_question">提问日期：2018-11-11</p>
-							</div>
-							<div class="ser_list">
-								<div class="question"><span>问</span>
-									<p>为什么要为孩子专门定制一款净化器？</p>
-								</div>
-								<div class="answer">
-									<span class="fl">答</span>
-									<p class="fl">孩子鼻腔短、鼻毛少，呼吸系统脆弱，需要更加洁净的空气保护。而市面上大多净化器，无法做到同时有效去除PM2.5和甲醛，甚至会产生二次污染。</p>
-									<div class="clearfix"></div>
-								</div>
-								<p class="time_question">提问日期：2018-11-11</p>
-							</div>
+								<p class="time_question">提问日期：{{item.addtime}}</p>
+							</div>						
 						</div>
 					</div>
 					<div class="fr inquire">
-						<p>立即咨询</p>
-						<form action="">
+						<p>立即咨询</p>					
 							<div class="form_div">
-								<input type="text" placeholder="您的姓名">
-								<input type="number" placeholder="您的电话">
-								<textarea name="" id="" cols="30" rows="10" placeholder="您的问题"></textarea>
-								<button>立即提交</button>
-							</div>
-						</form>
+								<input type="text" placeholder="您的姓名"  v-model="formInline.username">
+								<input type="number" placeholder="您的电话" v-model="formInline.phone">
+								<textarea name="" id="" cols="30" rows="10" placeholder="您的问题"  v-model="formInline.content"></textarea>
+								<button @click="submit">立即提交</button>
+							</div>						
 					</div>
 					<div class="clearfix"></div>
 				</div>		
@@ -294,8 +245,84 @@
 
 		</div>
 	</body>
-	<!--轮播配置-->
-	<script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/scroll.js" type="text/javascript" charset="utf-8"></script>
+	<script src="config.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var vm = new Vue({
+					el: '#app',
+					data: {
+						list: null,
+						liuyanlist:null,
+						formInline:{
+							username:null,
+							phone:null,
+							email:null,
+							QQ:null,
+							content:null
+						}
+					},
+					methods: {
+						submit:function(){							
+							this.$http.post(websiteURL+"/liuyan",this.formInline).then(function(res) {
+								if(res.status=='200'){
+								alert(res.body.msg)		
+								}else{
+								alert(res.body.msg)		
+								}																
+							}, function() {																
+							});														
+						},
+						getData: function(url, params) {
+							//发送get请求
+							this.$http.get(url, params).then(function(res) {
+								res.body.data.forEach(function(item,index){									
+									if(item.typeid=='zo'){
+										item.typeid="中欧"
+									}else if(item.typeid=='do'){
+										item.typeid="东欧"
+									}else if(item.typeid=='xo'){
+										item.typeid="西欧"
+									}else if(item.typeid=='bo'){
+										item.typeid="北欧"
+									}else if(item.typeid=='no'){
+										item.typeid="南欧"
+									}else if(item.typeid=='dny'){
+										item.typeid="东南亚"
+									}
+									
+								})
+								this.list = res.body.data;
+								
+							}, function() {
+								console.log('请求失败');
+							});
+						},
+						
+						getLiuyanList: function(url, params) {
+							//发送get请求
+							this.$http.get(url, params).then(function(res) {
+							   this.liuyanlist=res.body.data
+								
+							}, function() {
+								console.log('请求失败');
+							});
+						},
+						
+						
+					},
+					created() {
+						//得到导航
+						this.getData(websiteURL + "/getcountry", {})						
+						
+						//得到常见问题的回复
+						this.getLiuyanList(websiteURL + "/liuyan/list", {})		
+						
+						
+					}					
+				})
+				
+			}
+		</script>
+	
 
 </html>

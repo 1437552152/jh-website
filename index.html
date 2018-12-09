@@ -15,7 +15,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="stylesheet" type="text/less" href="less/plan.less"/>
+		<link rel="stylesheet" type="text/less" href="less/plan.less" />
 		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/less" href="less/common.less" />
@@ -47,8 +47,12 @@
 							<li class="active">
 								<a href="#">首页</a>
 							</li>
-							<li>
-								<a href="country.html">单个国家</a>
+							<li v-for="item in list">
+								<span>{{item.typeid}}</span>
+								<ul>
+									<li v-for="sing in item.countrylist"><a       v-bind:href="'country.html?id='+sing.Id">{{sing.country}}</a></li>
+									
+								</ul>
 							</li>
 							<li>
 								<a href="goodsCase.html">新闻中心</a>
@@ -56,7 +60,7 @@
 							<li>
 								<a href="plan.html">留学服务</a>
 							</li>
-						    <li>
+							<li>
 								<a href="questCenter.html">答疑中心</a>
 							</li>
 							<li>
@@ -88,146 +92,143 @@
 					</div>
 					<div class="swiper-pagination dotPos"></div>
 				</div>
-					<!-----------捷航服务---------->
-			<div class="service">
-			<div class="two_ch">
-				<img src="picture/thrch.png">
-			</div>
-			<div class="two_Ach">
-				<ul>
-					<li><img src="picture/zi01.png">留学规划</li>
-					<li style="background: #fc6b4b"><img src="picture/zi02.png">考试辅导</li>
-					<li style="background: #ff8b71"><img src="picture/zi03.png">背景提升</li>
-					<li style="background: #ffa173"><img src="picture/zi04.png">留学后服务</li>
-				</ul>
-			</div>
-			<div class="two_Bch">
-				<div class="two_Bch_con">
-					<dl>
-						<a href="#" rel="nofollow"><dt>我想，咨询留学申请</dt></a>
-						<dd>金牌评估师提供个性化留学评估</dd>
-						<a href="#" class="bc_a" title="捷航留学免费评估系统" onclick="popBtn()">免费评估</a>
-					</dl>
-					<img src="picture/bms01.png">
-				</div>
-				<div class="two_Bch_con">
-					<dl>
-						<a href="#" rel="nofollow"><dt>我想，托福100分</dt></a>
-						<dd>全程督导 真题讲解 考前冲刺 迅速提分</dd>
-						<a href="#" class="bc_a" rel="nofollow">立即报名</a>
-					</dl>
-					<img src="picture/bms02.png">
-				</div>
-				<div class="two_Bch_con">
-					<dl>
-						<a href="#" rel="nofollow"><dt>我想，申请常春藤名校</dt></a>
-						<dd>多对一辅导 全面提升综合竞争力</dd>
-						<a href="#" class="bc_a" rel="nofollow">了解服务</a>
-					</dl>
-					<img src="picture/bms03.png">
-				</div>
-				<div class="two_Bch_con" style="margin-right: 0">
-					<dl>
-						<a href="#" rel="nofollow"><dt>我想，找学生公寓</dt></a>
-						<dd>拒绝裸归 成功跻身北美 顶尖名企
-						</dd>
-						<a href="#" class="bc_a" rel="nofollow">定制方案</a>
-					</dl>
-					<img src="picture/bms04.png">
-				</div>
-			</div>
-			<div class="two_Cch">
-				<a href="#" title="捷航院校库">
-					<span>查学校排名</span>
-					<i>什么学校适合你？</i>
-				</a>
-				<a href="#" title="出国留学专业">
-					<span>看专业解析</span>
-					<i>解读细分专业区别</i>
-				</a>
-				<a href="#" title="捷航培训在线模考">
-					<span>模考预约</span>
-					<i>熟悉考试题型与形式</i>
-				</a>
-				<a href="#" title="捷航培训课程表">
-					<span>提分精品课</span>
-					<i>出分率高达86.7%</i>
-				</a>
-				<a href="#" rel="nofollow">
-					<span>头脑风暴</span>
-					<i>深挖学生潜能和优势</i>
-				</a>
-				<a href="#" rel="nofollow">
-					<span>文书与申请</span>
-					<i>针对申请纯英文创作</i>
-				</a>
-				<a href="#" title="捷航海外服务">
-					<span>办签证</span>
-					<i>指导材料模拟面试</i>
-				</a>
-				<a href="#" title="捷航海外服务" style="margin-right: 0;">
-					<span>行前指导</span>
-					<i>指导购机票、保险等</i>
-				</a>
-				<a href="#" title="捷航留学成功案例大全">
-					<span>对比案例</span>
-					<i>查询捷航留学案例库</i>
-				</a>
-				<a href="#" title="捷航留学方案">
-					<span>选方案</span>
-					<i>定制个性化留学方案</i>
-				</a>
-				<a href="#" title="香港sat考团">
-					<span>捷航考团</span>
-					<i>名师带队全程无忧</i>
-				</a>
-				<a href="#" rel="nofollow">
-					<span>抢考位</span>
-					<i>高速代报通道</i>
-				</a>
-				<a href="#·" title="捷航活动策划留学方案">
-					<span>实习科研</span>
-					<i>ISP全面提升软实力</i>
-				</a>
-				<a href="#" rel="nofollow">
-					<span>面试套磁</span>
-					<i>针对学校教授来辅导</i>
-				</a>
-				<a href="#" title="捷航海外置业网" rel="nofollow">
-					<span>海外置业</span>
-					<i>一站式终身服务</i>
-				</a>
-				<a href="#" title="捷航留学方案" style="margin-right: 0;">
-					<span>海外求职</span>
-					<i>辅导+规划双管齐下</i>
-				</a>
-			</div>
-			<!---------捷航服务end -------->
-			<!--为什么选择捷航s-->
-			<div class="why-select">
-				<h2><a href="#">为什么选择捷航</a></h2>
-				<div class="why-select-advantage">
-					<div class="wsa-advantage wsa-advantage-1">
-						<h2><span class="wsa-advantage-span1"></span>咨询师人均主刀120个申请案例</h2>
-						<p>在捷航，40%拥有8年美国留学咨询（非中介）工作经验，人均5年工作经验，人均主刀120个申请案例,成功率比同行高15%。</p>
+				<!-----------捷航服务---------->
+				<div class="service">
+					<div class="two_ch">
+						<img src="picture/thrch.png">
 					</div>
-					<div class="wsa-advantage">
-						<h2><span class="wsa-advantage-span2"></span>涵盖各专业的数万真实申请案例</h2>
-						<p>我们建立了国内领先的申请数据库，拥有数万真实申请案例，涵盖各专业领域；撰写近百万字的原创留学申请文章、专业的留学书籍，</p>
+					<div class="two_Ach">
+						<ul>
+							<li><img src="picture/zi01.png">留学规划</li>
+							<li style="background: #fc6b4b"><img src="picture/zi02.png">考试辅导</li>
+							<li style="background: #ff8b71"><img src="picture/zi03.png">背景提升</li>
+							<li style="background: #ffa173"><img src="picture/zi04.png">留学后服务</li>
+						</ul>
 					</div>
-					<div class="wsa-advantage">
-						<h2><span class="wsa-advantage-span3"></span>海外名院校顾问团队</h2>
-						<p>拥有以哈佛、耶鲁、普林斯顿为代表的全美大学的海外顾问团队，还拥有国内领先的海外名校教授资源。</p>
+					<div class="two_Bch">
+						<div class="two_Bch_con">
+							<dl>
+								<a href="#" rel="nofollow"><dt>我想，咨询留学申请</dt></a>
+								<dd>金牌评估师提供个性化留学评估</dd>
+								<a href="#" class="bc_a" title="捷航留学免费评估系统" onclick="popBtn()">免费评估</a>
+							</dl>
+							<img src="picture/bms01.png">
+						</div>
+						<div class="two_Bch_con">
+							<dl>
+								<a href="#" rel="nofollow"><dt>我想，托福100分</dt></a>
+								<dd>全程督导 真题讲解 考前冲刺 迅速提分</dd>
+								<a href="#" class="bc_a" rel="nofollow">立即报名</a>
+							</dl>
+							<img src="picture/bms02.png">
+						</div>
+						<div class="two_Bch_con">
+							<dl>
+								<a href="#" rel="nofollow"><dt>我想，申请常春藤名校</dt></a>
+								<dd>多对一辅导 全面提升综合竞争力</dd>
+								<a href="#" class="bc_a" rel="nofollow">了解服务</a>
+							</dl>
+							<img src="picture/bms03.png">
+						</div>
+						<div class="two_Bch_con" style="margin-right: 0">
+							<dl>
+								<a href="#" rel="nofollow"><dt>我想，找学生公寓</dt></a>
+								<dd>拒绝裸归 成功跻身北美 顶尖名企
+								</dd>
+								<a href="#" class="bc_a" rel="nofollow">定制方案</a>
+							</dl>
+							<img src="picture/bms04.png">
+						</div>
+					</div>
+					<div class="two_Cch">
+						<a href="#" title="捷航院校库">
+							<span>查学校排名</span>
+							<i>什么学校适合你？</i>
+						</a>
+						<a href="#" title="出国留学专业">
+							<span>看专业解析</span>
+							<i>解读细分专业区别</i>
+						</a>
+						<a href="#" title="捷航培训在线模考">
+							<span>模考预约</span>
+							<i>熟悉考试题型与形式</i>
+						</a>
+						<a href="#" title="捷航培训课程表">
+							<span>提分精品课</span>
+							<i>出分率高达86.7%</i>
+						</a>
+						<a href="#" rel="nofollow">
+							<span>头脑风暴</span>
+							<i>深挖学生潜能和优势</i>
+						</a>
+						<a href="#" rel="nofollow">
+							<span>文书与申请</span>
+							<i>针对申请纯英文创作</i>
+						</a>
+						<a href="#" title="捷航海外服务">
+							<span>办签证</span>
+							<i>指导材料模拟面试</i>
+						</a>
+						<a href="#" title="捷航海外服务" style="margin-right: 0;">
+							<span>行前指导</span>
+							<i>指导购机票、保险等</i>
+						</a>
+						<a href="#" title="捷航留学成功案例大全">
+							<span>对比案例</span>
+							<i>查询捷航留学案例库</i>
+						</a>
+						<a href="#" title="捷航留学方案">
+							<span>选方案</span>
+							<i>定制个性化留学方案</i>
+						</a>
+						<a href="#" title="香港sat考团">
+							<span>捷航考团</span>
+							<i>名师带队全程无忧</i>
+						</a>
+						<a href="#" rel="nofollow">
+							<span>抢考位</span>
+							<i>高速代报通道</i>
+						</a>
+						<a href="#·" title="捷航活动策划留学方案">
+							<span>实习科研</span>
+							<i>ISP全面提升软实力</i>
+						</a>
+						<a href="#" rel="nofollow">
+							<span>面试套磁</span>
+							<i>针对学校教授来辅导</i>
+						</a>
+						<a href="#" title="捷航海外置业网" rel="nofollow">
+							<span>海外置业</span>
+							<i>一站式终身服务</i>
+						</a>
+						<a href="#" title="捷航留学方案" style="margin-right: 0;">
+							<span>海外求职</span>
+							<i>辅导+规划双管齐下</i>
+						</a>
+					</div>
+					<!---------捷航服务end -------->
+					<!--为什么选择捷航s-->
+					<div class="why-select">
+						<h2><a href="#">为什么选择捷航</a></h2>
+						<div class="why-select-advantage">
+							<div class="wsa-advantage wsa-advantage-1">
+								<h2><span class="wsa-advantage-span1"></span>咨询师人均主刀120个申请案例</h2>
+								<p>在捷航，40%拥有8年美国留学咨询（非中介）工作经验，人均5年工作经验，人均主刀120个申请案例,成功率比同行高15%。</p>
+							</div>
+							<div class="wsa-advantage">
+								<h2><span class="wsa-advantage-span2"></span>涵盖各专业的数万真实申请案例</h2>
+								<p>我们建立了国内领先的申请数据库，拥有数万真实申请案例，涵盖各专业领域；撰写近百万字的原创留学申请文章、专业的留学书籍，</p>
+							</div>
+							<div class="wsa-advantage">
+								<h2><span class="wsa-advantage-span3"></span>海外名院校顾问团队</h2>
+								<p>拥有以哈佛、耶鲁、普林斯顿为代表的全美大学的海外顾问团队，还拥有国内领先的海外名校教授资源。</p>
+							</div>
+						</div>
+						<!--<a href="#">查看详情</a>-->
 					</div>
 				</div>
-				<!--<a href="#">查看详情</a>-->
+				<!--为什么选择捷航end-->
 			</div>
-		</div>
-		<!--为什么选择捷航end-->
-			</div>
-
-		
-           
 
 			<!--捷航，服务每一份留学梦s-->
 			<div class="section section2">
@@ -383,21 +384,23 @@
 			</div>
 			<!-- 语言培训e -->
 			<!-----------表单---------->
-		     <div id="news-main">
+			<div id="news-main">
 				<div class="sucpop-common">
 					<table width="100%" height="100%" border="0" cellpadding="0">
-						<tbody><tr>
-							<td align="left" bgcolor="#db2c3f" style="color:#fff">温馨提示</td>
-						</tr>
-						<tr>
-							<td align="center">
-								<div class="boxDesc"></div>
-							</td>
-						</tr>
-						<tr>
-							<td align="center"><input type="button" value="确定" class="surebtn"></td>
-						</tr>
-					</tbody></table>
+						<tbody>
+							<tr>
+								<td align="left" bgcolor="#db2c3f" style="color:#fff">温馨提示</td>
+							</tr>
+							<tr>
+								<td align="center">
+									<div class="boxDesc"></div>
+								</td>
+							</tr>
+							<tr>
+								<td align="center"><input type="button" value="确定" class="surebtn"></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 
 				<div class="applypopbox-common" style="display: none;"></div>
@@ -411,83 +414,85 @@
 						<input type="hidden" name="partId-common" id="partId-common" value="web-yuyue-common">
 						<input type="hidden" name="partName-common" id="partName-common" value="专题公用资源入口【集团】-弹框">
 						<table class="formt" border="0" cellspacing="0" cellpadding="10">
-							<tbody><tr>
-								<td align="right" width="100">*姓名：</td>
-								<td><input type="text" value="" name="userName" id="userName-common"></td>
-							</tr>
-							<tr>
-								<td align="right">意向国家：</td>
-								<td>
-									<select name="toPlace" id="toPlace-common">
-										<option value="">请选择</option>
-										<option value="美国">美国</option>
-										<option value="英国">英国</option>
-										<option value="加拿大">加拿大</option>
-										<option value="澳大利亚">澳大利亚</option>
-										<option value="新西兰">新西兰</option>
-										<option value="新加坡">新加坡</option>
-										<option value="中国香港">中国香港</option>
-										<option value="日本">日本</option>
-										<option value="韩国">韩国</option>
-										<option value="法国">法国</option>
-										<option value="德国">德国</option>
-										<option value="意大利">意大利</option>
-										<option value="荷兰">荷兰</option>
-										<option value="爱尔兰">爱尔兰</option>
-										<option value="其他">其他</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td align="right">*电话：</td>
-								<td><input type="text" value="" name="usertel" id="usertel-common"></td>
-							</tr>
-							<tr>
-								<td align="right">所在城市：</td>
-								<td>
-									<select name="fromCity" id="fromCity-common">
-										<option value="">请选择</option>
-										<option value="北京">北京</option>
-										<option value="上海">上海</option>
-										<option value="杭州">杭州</option>
-										<option value="苏州">苏州</option>
-										<option value="长沙">长沙</option>
-										<option value="深圳">深圳</option>
-										<option value="郑州">郑州</option>
-										<option value="宁波">宁波</option>
-										<option value="西安">西安</option>
-										<option value="厦门">厦门</option>
-										<option value="济南">济南</option>
-										<option value="武汉">武汉</option>
-										<option value="福州">福州</option>
-										<option value="南昌">南昌</option>
-										<option value="太原">太原</option>
-										<option value="温州">温州</option>
-										<option value="舟山">舟山</option>
-										<option value="天津">天津</option>
-										<option value="南京">南京</option>
-										<option value="重庆">重庆</option>
-										<option value="合肥">合肥</option>
-										<option value="成都">成都</option>
-										<option value="广州">广州</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2" align="right">*是必填项</td>
-							</tr>
-							<tr>
-								<td align="center" colspan="2">
-									<input type="button" value="预约申请" id="subBtnCommon" name="Submit">
-									<a class="olcall" onclick="doyoo.util.openChat('g=10061553'); return false;" target="_blank">在线咨询</a>
-									<div class="clear"></div>
-								</td>
-							</tr>
-						</tbody></table>
+							<tbody>
+								<tr>
+									<td align="right" width="100">*姓名：</td>
+									<td><input type="text" value="" name="userName" id="userName-common"></td>
+								</tr>
+								<tr>
+									<td align="right">意向国家：</td>
+									<td>
+										<select name="toPlace" id="toPlace-common">
+											<option value="">请选择</option>
+											<option value="美国">美国</option>
+											<option value="英国">英国</option>
+											<option value="加拿大">加拿大</option>
+											<option value="澳大利亚">澳大利亚</option>
+											<option value="新西兰">新西兰</option>
+											<option value="新加坡">新加坡</option>
+											<option value="中国香港">中国香港</option>
+											<option value="日本">日本</option>
+											<option value="韩国">韩国</option>
+											<option value="法国">法国</option>
+											<option value="德国">德国</option>
+											<option value="意大利">意大利</option>
+											<option value="荷兰">荷兰</option>
+											<option value="爱尔兰">爱尔兰</option>
+											<option value="其他">其他</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">*电话：</td>
+									<td><input type="text" value="" name="usertel" id="usertel-common"></td>
+								</tr>
+								<tr>
+									<td align="right">所在城市：</td>
+									<td>
+										<select name="fromCity" id="fromCity-common">
+											<option value="">请选择</option>
+											<option value="北京">北京</option>
+											<option value="上海">上海</option>
+											<option value="杭州">杭州</option>
+											<option value="苏州">苏州</option>
+											<option value="长沙">长沙</option>
+											<option value="深圳">深圳</option>
+											<option value="郑州">郑州</option>
+											<option value="宁波">宁波</option>
+											<option value="西安">西安</option>
+											<option value="厦门">厦门</option>
+											<option value="济南">济南</option>
+											<option value="武汉">武汉</option>
+											<option value="福州">福州</option>
+											<option value="南昌">南昌</option>
+											<option value="太原">太原</option>
+											<option value="温州">温州</option>
+											<option value="舟山">舟山</option>
+											<option value="天津">天津</option>
+											<option value="南京">南京</option>
+											<option value="重庆">重庆</option>
+											<option value="合肥">合肥</option>
+											<option value="成都">成都</option>
+											<option value="广州">广州</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" align="right">*是必填项</td>
+								</tr>
+								<tr>
+									<td align="center" colspan="2">
+										<input type="button" value="预约申请" id="subBtnCommon" name="Submit">
+										<a class="olcall" onclick="doyoo.util.openChat('g=10061553'); return false;" target="_blank">在线咨询</a>
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 
 					</form>
 				</div>
-			</div>  	
+			</div>
 			<!-----------表单---------->
 			<!-----------名师团队---------->
 			<div class="two_Hch">
@@ -1739,7 +1744,6 @@
 
 									</li>
 
-								
 									<li>
 
 										<a href="#">商务推广</a>
@@ -1842,18 +1846,64 @@
 		<!--轮播配置-->
 		<script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/scroll.js" type="text/javascript" charset="utf-8"></script>
-		
+
 		<script>
-			$(function(){
-				$(".inHd ul li").hover(function(){
+			$(function() {
+				$(".inHd ul li").hover(function() {
 					let index = $(this).index();
 					$(this).addClass("on");
-					$(this).siblings().removeClass("on");				
-					$(".inBd .yxk").eq(index).css({"display":"block"}); 
-					$(".inBd .yxk").eq(index).siblings().css({"display":"none"});										
+					$(this).siblings().removeClass("on");
+					$(".inBd .yxk").eq(index).css({
+						"display": "block"
+					});
+					$(".inBd .yxk").eq(index).siblings().css({
+						"display": "none"
+					});
 				})
 			})
-		</script>		
+		</script>
+		<script src="config.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var vm = new Vue({
+					el: '#app',
+					data: {
+						list: null,
+					},
+					methods: {
+						getData: function(url, params) {
+							//发送get请求
+							this.$http.get(url, params).then(function(res) {
+								res.body.data.forEach(function(item,index){									
+									if(item.typeid=='zo'){
+										item.typeid="中欧"
+									}else if(item.typeid=='do'){
+										item.typeid="东欧"
+									}else if(item.typeid=='xo'){
+										item.typeid="西欧"
+									}else if(item.typeid=='bo'){
+										item.typeid="北欧"
+									}else if(item.typeid=='no'){
+										item.typeid="南欧"
+									}else if(item.typeid=='dny'){
+										item.typeid="东南亚"
+									}
+									
+								})
+								this.list = res.body.data;
+								
+							}, function() {
+								console.log('请求失败');
+							});
+						}
+					},
+					created() {
+						this.getData(websiteURL + "/getcountry", {})
+					}
+
+				})
+			}
+		</script>
 	</body>
 
 </html>
